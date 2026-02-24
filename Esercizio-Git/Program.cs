@@ -32,7 +32,7 @@ namespace Esericizi_Git
                         AggiungiStudente();
                         break;
                     case "2":
-                        VisualizzaStudenti();
+                        VisualizzaStudenti_Mencarelli();
                         break;
                     case "3":
                         CercaStudente();
@@ -60,10 +60,15 @@ namespace Esericizi_Git
             Console.WriteLine("Funzione in costruzione...");
         }
 
-        static void VisualizzaStudenti()
+        static void VisualizzaStudenti_Mencarelli()
         {
             // DA IMPLEMENTARE dallo studente X
-            Console.WriteLine("Funzione in costruzione...");
+            //Console.WriteLine("Funzione in costruzione...");
+
+            foreach (var item in registro)
+            {
+                Console.WriteLine(item.Descrizione());
+            }
         }
 
         static void CercaStudente()
