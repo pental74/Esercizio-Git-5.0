@@ -60,11 +60,9 @@ namespace Esericizi_Git
             Console.WriteLine("Funzione in costruzione...");
         }
 
+        // Funzione elaborata da Sofia Mencarelli
         static void VisualizzaStudenti_Mencarelli()
         {
-            // DA IMPLEMENTARE dallo studente X
-            //Console.WriteLine("Funzione in costruzione...");
-
             foreach (var item in registro)
             {
                 Console.WriteLine(item.Descrizione());
