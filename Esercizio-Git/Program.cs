@@ -77,29 +77,23 @@ namespace Esericizi_Git
             }
         }
 
-        static void CercaStudente()
+        static void CercaStudente_Adssaoui()
         {
-            Console.Write("Inserisci parte del nome o cognome da cercare: ");
-            string ricerca = Console.ReadLine();
+            Console.WriteLine("Che studente vuoi cercare: ");
+            string studente = Console.ReadLine();
 
-            List<Studente> studentiTrovati = new List<Studente>();
-            if (!string.IsNullOrWhiteSpace(ricerca))
+            for (int i = 0; i < registro.Count; i++)
             {
-                studentiTrovati = registro.FindAll(s => 
-                s.Nome.ToLower().Contains(ricerca) ||
-                s.Cognome.ToLower().Contains(ricerca));
-            }
+                Studente s = registro[i];
 
-            if (studentiTrovati.Count != 0)
-            {
-                Console.WriteLine($"\nTrovati {studentiTrovati.Count} risultati:");
-                foreach (var s in studentiTrovati)
+                if ((s.Nome + " " + s.Cognome) == studente)
                 {
-                    Console.WriteLine(s);
+                    Console.WriteLine($"Studente trovato in posizione: {i}");
+                    break;
                 }
             }
-            else
-                Console.WriteLine("Nessuno studente trovato.");
+
+            Console.WriteLine("Studente non trovato.");
         }
 
         static void RimuoviStudente()
