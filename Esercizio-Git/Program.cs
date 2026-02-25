@@ -71,10 +71,27 @@ namespace Esericizi_Git
 
         static void CercaStudente()
         {
-            // DA IMPLEMENTARE dallo studente X
-            int prova=0; // semplice operazione didattica
-            Console.WriteLine("Funzione in costruzione... {0} ", prova );
-            
+            Console.Write("Inserisci parte del nome o cognome da cercare: ");
+            string ricerca = Console.ReadLine();
+
+            List<Studente> studentiTrovati = new List<Studente>();
+            if (!string.IsNullOrWhiteSpace(ricerca))
+            {
+                studentiTrovati = registro.FindAll(s => 
+                s.Nome.ToLower().Contains(ricerca) ||
+                s.Cognome.ToLower().Contains(ricerca));
+            }
+
+            if (studentiTrovati.Count != 0)
+            {
+                Console.WriteLine($"\nTrovati {studentiTrovati.Count} risultati:");
+                foreach (var s in studentiTrovati)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            else
+                Console.WriteLine("Nessuno studente trovato.");
         }
 
         static void RimuoviStudente()
