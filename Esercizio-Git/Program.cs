@@ -53,11 +53,19 @@ namespace Esericizi_Git
         }
 
         // =================== METODI DA IMPLEMENTARE DAGLI STUDENTI ===================
-
+        //Aggiungi Studente 
         static void AggiungiStudente()
         {
-            // DA IMPLEMENTARE dallo studente X
-            Console.WriteLine("Funzione in costruzione...");
+            string nome;
+            string cognome;
+            string matricola;
+            Console.WriteLine("Insersci nome:");
+            nome = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Insersci cognome:");
+            cognome = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Insersci matricola:");
+            matricola = Convert.ToString(Console.ReadLine());
+            registro.Add(new Studente(nome, cognome, matricola));
         }
 
         // Funzione elaborata da Sofia Mencarelli
