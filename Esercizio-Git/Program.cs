@@ -72,7 +72,8 @@ namespace Esericizi_Git
         static void CercaStudente()
         {
             // DA IMPLEMENTARE dallo studente X
-            Console.WriteLine("Funzione in costruzione...");
+            int prova=0;
+            Console.WriteLine(prova);
         }
 
         static void RimuoviStudente()
