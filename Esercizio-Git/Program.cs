@@ -81,6 +81,8 @@ namespace Esericizi_Git
         {
             Console.WriteLine("Che studente vuoi cercare: ");
             string studente = Console.ReadLine();
+            // Correzione
+            bool trovato = false;
 
             for (int i = 0; i < registro.Count; i++)
             {
@@ -89,11 +91,13 @@ namespace Esericizi_Git
                 if ((s.Nome + " " + s.Cognome) == studente)
                 {
                     Console.WriteLine($"Studente trovato in posizione: {i}");
-                    break;
+                    // errore casomai return;
+                    // nel tuo codice break; stampa comunque "Studente non trovato."
+                    return;
                 }
             }
-
-            Console.WriteLine("Studente non trovato.");
+            if (!trovato)
+                Console.WriteLine("Studente non trovato.");
         }
 
         static void RimuoviStudente()
