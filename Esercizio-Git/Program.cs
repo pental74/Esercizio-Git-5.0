@@ -87,7 +87,7 @@ namespace Esericizi_Git
                 Console.WriteLine($"\nTrovati {studentiTrovati.Count} risultati:");
                 foreach (var s in studentiTrovati)
                 {
-                    Console.WriteLine(s);
+                    Console.WriteLine(s.Descrizione());
                 }
             }
             else
