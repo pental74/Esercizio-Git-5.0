@@ -103,7 +103,25 @@ namespace Esericizi_Git
         static void RimuoviStudente()
         {
             // DA IMPLEMENTARE dallo studente Y
-            Console.WriteLine("Funzione in costruzione...");
+            Console.Write("Inserisci la matricola dello studente da rimuovere: ");
+            string matricola = Console.ReadLine();
+
+            Studente trovato = null;
+            foreach (Studente s in registro)
+            {
+                if (s.Matricola == matricola)
+                    trovato = s;
+            }
+
+            if (trovato != null)
+            {
+                registro.Remove(trovato);
+                Console.WriteLine("Studente eliminato correttamente.");
+            }
+            else
+            {
+                Console.WriteLine($"Studente con matricola {matricola} non trovato.");
+            }
         }
     }
 
